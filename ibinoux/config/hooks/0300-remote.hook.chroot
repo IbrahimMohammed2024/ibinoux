@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+echo "Ibinoux: تفعيل خدمات الريموت (SSH + RDP)..."
+
+systemctl enable ssh
+systemctl enable xrdp
+
+echo "تم تفعيل خدمات الريموت."

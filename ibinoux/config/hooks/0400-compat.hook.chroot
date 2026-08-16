@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+echo "Ibinoux: تفعيل دعم 32-bit (multiarch) وضبط Wine..."
+
+dpkg --add-architecture i386
+apt-get update
+
+# تفعيل خادم الـ Control Panel (Apache + PHP)
+systemctl enable apache2
+rm -f /var/www/html/index.html
+ln -sf /var/www/ibinoux-control-panel /var/www/html/ibinoux
+
+echo "تم ضبط التوافق."

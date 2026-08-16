@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+echo "Ibinoux: تفعيل الـ Firewall الافتراضي..."
+
+# تفعيل ufw كـ firewall افتراضي بسيط فوق nftables
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow ssh
+ufw allow 3389/tcp   # RDP
+ufw allow 5900/tcp   # VNC
+ufw allow 80/tcp     # Control Panel
+systemctl enable ufw
+
+echo "تم تفعيل الـ Firewall."

@@ -1,0 +1,12 @@
+#!/bin/bash
+echo ""
+echo "  ___ _     _                  "
+echo " |_ _| |__ (_)_ __   _____  ___  __  __"
+echo "  | || '_ \\| | '_ \\ / _ \\ \\/ /  \\ \\/ /"
+echo "  | || |_) | | | | | (_) >  <    >  < "
+echo " |___|_.__/|_|_| |_|\\___/_/\\_\\  /_/\\_\\"
+echo ""
+echo " Ibinoux OS - Terminal Shell"
+echo " Firewall: $(systemctl is-active ufw 2>/dev/null || echo 'unknown')"
+echo " Defender (ClamAV): $(systemctl is-active clamav-daemon 2>/dev/null || echo 'unknown')"
+echo ""

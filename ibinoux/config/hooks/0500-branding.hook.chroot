@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+echo "Ibinoux: ضبط اسم النظام والـ branding..."
+
+echo "Ibinoux" > /etc/hostname
+cat > /etc/os-release <<'EOF'
+NAME="Ibinoux"
+VERSION="1.0"
+ID=ibinoux
+ID_LIKE=debian
+PRETTY_NAME="Ibinoux OS 1.0"
+VERSION_ID="1.0"
+HOME_URL="https://ibinoux.local"
+EOF
+
+# رسالة ترحيب في الـ shell
+cat >> /etc/bash.bashrc <<'EOF'
+
+# Ibinoux Welcome
+if [ -x /usr/local/bin/ibinoux-shell-welcome.sh ]; then
+  /usr/local/bin/ibinoux-shell-welcome.sh
+fi
+EOF
+
+echo "تم ضبط الـ branding."

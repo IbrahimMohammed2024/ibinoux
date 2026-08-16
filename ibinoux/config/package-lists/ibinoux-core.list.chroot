@@ -1,0 +1,49 @@
+# ===== النواة والدرايفرز =====
+linux-image-amd64
+firmware-linux
+firmware-linux-nonfree
+firmware-misc-nonfree
+firmware-realtek
+firmware-iwlwifi
+firmware-atheros
+
+# ===== سطح المكتب =====
+xfce4
+xfce4-goodies
+lightdm
+
+# ===== Shell / Terminal =====
+bash
+zsh
+xterm
+xfce4-terminal
+
+# ===== الشبكة والاتصال عن بعد =====
+openssh-server
+xrdp
+tigervnc-standalone-server
+net-tools
+network-manager
+
+# ===== الحماية: Firewall + Defender =====
+nftables
+ufw
+gufw
+clamav
+clamav-daemon
+clamtk
+
+# ===== دعم تشغيل برامج Windows =====
+wine
+wine32
+wine64
+winetricks
+playonlinux
+
+# ===== أدوات إدارة النظام (بديل Control Panel / Regedit) =====
+gnome-system-tools
+dconf-editor
+htop
+neofetch
+apache2
+php

@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+echo "Ibinoux: تجهيز الـ Defender (ClamAV)..."
+
+systemctl enable clamav-freshclam
+systemctl enable clamav-daemon
+
+# مهمة فحص يومية تلقائية
+cat > /etc/cron.daily/ibinoux-scan <<'EOF'
+#!/bin/bash
+clamscan -r --quiet /home /root /var/www --log=/var/log/ibinoux-defender.log
+EOF
+chmod +x /etc/cron.daily/ibinoux-scan
+
+echo "تم تجهيز الـ Defender."

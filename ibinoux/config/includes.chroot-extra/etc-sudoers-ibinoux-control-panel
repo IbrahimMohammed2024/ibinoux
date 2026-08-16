@@ -1,0 +1,11 @@
+# Ibinoux Control Panel - صلاحيات sudo محدودة
+# يسمح لمستخدم www-data بتشغيل أوامر إدارة محددة فقط بدون كلمة سر
+# ضعه في /etc/sudoers.d/ibinoux-control-panel (وليس /etc/sudoers مباشرة)
+# تحقق دائمًا بـ: visudo -c -f /etc/sudoers.d/ibinoux-control-panel
+
+www-data ALL=(root) NOPASSWD: /usr/sbin/ufw enable
+www-data ALL=(root) NOPASSWD: /usr/sbin/ufw --force enable
+www-data ALL=(root) NOPASSWD: /usr/sbin/ufw disable
+www-data ALL=(root) NOPASSWD: /usr/sbin/ufw status numbered
+www-data ALL=(root) NOPASSWD: /usr/bin/clamscan -r --quiet /home
+www-data ALL=(root) NOPASSWD: /usr/bin/freshclam
